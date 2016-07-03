@@ -2,19 +2,22 @@ var ConnectFour = {
 	player1: 'player-1',
 	player2: 'player-2',
 	currentPlayer: "",
+	hasWinner: false,
 	canvas: $('#connect-four-canvas'),
 
 	start: function() {
+		self.hasWinner = false;
 		this.setCurrentPlayer(this.player1);
 		$('#paylers-info').show();
 		$('#player-moves').show();
 		$('#startBtn').hide();
 		$('#endBtn').show();
 		$('#drop-area-help').show();
+		this.bindCellsEvents();
 	},
 
 	reset: function() {
-		this.canvas.find('td').removeAttr('class');
+		this.canvas.find('td').unbind('click mouseenter mouseleave').removeAttr('class');
 		this.start();
 		$('#startBtn').hide();
 		$('#endBtn').show();
@@ -40,6 +43,22 @@ var ConnectFour = {
 			else this.showDraw();
 
 		} else this.showWinner(winner)
+	},
+
+	bindCellsEvents: function() {
+		var self = this;
+		this.canvas.find('td').click(function(e) {
+			var colIndex = $(this).index();
+			self.playerMove(colIndex);
+		}).hover(function(e) {
+			var colIndex = $(this).index();
+			$('#player-moves tr th:nth-child('+ (colIndex + 1) +') div').css('opacity', 1);
+			self.canvas.find('tr td:nth-child('+ (colIndex + 1) +')').css('backgroundColor', '#EFEFEF');
+		}, function(e) {
+			var colIndex = $(this).index();
+			$('#player-moves tr th:nth-child('+ (colIndex + 1) +') div').css('opacity', 0);
+			self.canvas.find('tr td').css('backgroundColor', 'transparent');
+		});
 	},
 
 	checkWinningPlayer: function(colIndex, rowIndex) {
@@ -126,6 +145,7 @@ var ConnectFour = {
 	},
 
 	showWinner: function(player) {
+		self.hasWinner = true;
 		var playerLabel = $.trim($('#'+player).text());
 		alert("Congrats " + playerLabel + "! You've won the game!");
 		this.endGame();
@@ -138,8 +158,9 @@ var ConnectFour = {
 
 	endGame: function() {
 		$('#player-moves').hide();
+		$('#paylers-info').hide();
 		$('#drop-area-help').hide();
-		$('#paylers-info').hide()
+		this.canvas.find('td').unbind('click mouseenter mouseleave');
 	},
 
 	switchPlayer: function() {

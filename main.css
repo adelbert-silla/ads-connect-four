@@ -17,7 +17,7 @@ body {
 #player-moves tr > th,
 #connect-four-canvas td {
 	width: 40px;
-	padding: 6px;
+	padding: 8px;
 }
 #connect-four-canvas td div {
 	border: 1px solid #aaa;
@@ -58,11 +58,6 @@ body {
 	height: 38px;
 }
 
-#player-moves tr > th > div:hover {
-	opacity: 1;
-	cursor: pointer;
-}
-
 #paylers-info #player-1 {
 	margin-right: 20px;
 }
@@ -93,8 +88,8 @@ body {
 #drop-area-help span {
  	margin: 0px auto; 
  	font-size: 11px;
- 	letter-spacing: 3px;
- 	word-spacing: 5px;
+ 	letter-spacing: 2px;
+ 	word-spacing: 4px;
  	display: inline-block; 
  	color: #CCCCCC;
 }
