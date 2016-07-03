@@ -1,0 +1,100 @@
+body {
+	padding: 20px 0;
+	text-align: center;;
+	margin: auto;
+	font-family: Arial;
+}
+
+#connect-four-canvas {
+	margin: 0 auto;
+	border: 1px solid #aaa;
+}
+
+#players-option {
+	margin-bottom: 10px;
+}
+
+#player-moves tr > th,
+#connect-four-canvas td {
+	width: 40px;
+	padding: 6px;
+}
+#connect-four-canvas td div {
+	border: 1px solid #aaa;
+    border-radius: 20px;
+    height: 38px;
+    width: 100%;
+}
+
+#player-moves {
+	margin: 20 auto 0;
+}
+
+#player-moves tr th button {
+	padding: 3px;
+}
+
+#paylers-info {
+	margin-top: 10px; 
+}
+
+#player-moves tr > th > div,
+#current-player .player-1,
+#current-player .player-2,
+#paylers-info span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 10px; 
+	border: 1px solid #888;
+	position: relative;
+	top: 3px;
+}
+
+#player-moves tr > th > div {
+	opacity: 0;
+	border-radius: 20px; 
+	width: 38px;
+	height: 38px;
+}
+
+#player-moves tr > th > div:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#paylers-info #player-1 {
+	margin-right: 20px;
+}
+
+#player-moves tr > th.player-1 > div,
+#connect-four-canvas td.player-1 div,
+#current-player.player-1,
+#paylers-info #player-1 span {
+	background-color: yellow;
+}
+
+#player-moves tr > th.player-2 > div,
+#connect-four-canvas td.player-2 div,
+#current-player.player-2,
+#paylers-info #player-2 span {
+	background-color: red;
+}
+
+#current-player-info {
+	margin-top: 40px;
+}
+
+#drop-area-help {
+	position: absolute; 
+	width: 100%; 
+	top: 175px;
+}
+#drop-area-help span {
+ 	margin: 0px auto; 
+ 	font-size: 11px;
+ 	letter-spacing: 3px;
+ 	word-spacing: 5px;
+ 	display: inline-block; 
+ 	color: #CCCCCC;
+}

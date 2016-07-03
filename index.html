@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Connect Four</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<div id="players-option">
+			<label><input type="radio" name="player-type" value="two" checked=""> Two Players</label>
+			<label><input type="radio" name="player-type" value="single" disabled=""> Single Player</label>
+			<button id="startBtn" onclick="ConnectFour.start()">Let's Start!</button>
+			<button id="endBtn" onclick="ConnectFour.reset()" style="display: none">Reset Game!</button>
+		</div>
+
+		<div id="paylers-info" style="display:none">
+			<label id="player-1"><em><span></span> Player 1</em></label>
+			<label id="player-2"><em><span></span> Player 2</em></label>
+
+			<div id="current-player-info">
+				<span id="current-player" class="player-1"></span> Player turn.
+			</div>
+		</div>
+
+		<div id="drop-area-help" style="display: none"><span>hover here then press to drop your piece.</span></div>
+		<table id="player-moves" style="display:none">
+			<tr>
+				<th><div onclick="ConnectFour.playerMove(0)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(1)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(2)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(3)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(4)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(5)"></div></th>
+				<th><div onclick="ConnectFour.playerMove(6)"></div></th>
+			</tr>
+		</table>
+		<table id="connect-four-canvas">
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+				<td><div></div></td>
+			</tr>
+		</table>
+
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
