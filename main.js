@@ -2,11 +2,9 @@ var ConnectFour = {
 	player1: 'player-1',
 	player2: 'player-2',
 	currentPlayer: "",
-	hasWinner: false,
 	canvas: $('#connect-four-canvas'),
 
 	start: function() {
-		self.hasWinner = false;
 		this.setCurrentPlayer(this.player1);
 		$('#paylers-info').show();
 		$('#player-moves').show();
@@ -145,7 +143,6 @@ var ConnectFour = {
 	},
 
 	showWinner: function(player) {
-		self.hasWinner = true;
 		var playerLabel = $.trim($('#'+player).text());
 		alert("Congrats " + playerLabel + "! You've won the game!");
 		this.endGame();
